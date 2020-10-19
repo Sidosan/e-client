@@ -30,15 +30,21 @@ Para este projeto vamos precisar de instalar os módulos:
 
 ``` npm i mqtt ```
 
+#### nodemom:
+
+``` npm i nodemom ```
+
 ### Passo 5) Criar servidor (com Node.js)
 Para começar vamos criar o ficheiro index.js (indicado no package.json)
-```nano index.js``
+``` nano index.js ```
 
 ### Passo 6) Criar a conexão MQTT
 
 Meu Broker MQTT só pode ter acesso se estiver previamente autorizado dentro do banco de dados, ou seja, nao vai conseguir se conectar se não estiver registrado dentro do banco.
 
 ```
+const mqtt = require('mqtt'); //chamar modulo mqtt
+
 var options = {
     port: 1883, // porta do broker MQTT
     host: "localhost", // endereço do broker MQTT
